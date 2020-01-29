@@ -6,10 +6,6 @@ import { useSelector, useDispatch } from "react-redux"
 
 const Top = () => {
     const name = useSelector(state => state.name)
-    const changeName = () => {
-        console.log(name)
-    }
-    changeName()
 
     return (
         <div>
