@@ -13,6 +13,6 @@ const slice = createSlice({
     }
 })
 
-export default slice.reducer
-
 export const { setName, clearName } = slice.actions
+
+export default slice.reducer
