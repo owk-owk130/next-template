@@ -7,10 +7,12 @@ import { increment, decrement } from '../store/counter'
 const About = () => {
     const dispatch = useDispatch()
     const counter = useSelector(state => state.counter)
-
-    console.log(increment())
-    console.log()
-
+    const countIncrement = () => {
+        dispatch(increment())
+    }
+    const countDecrement = () => {
+        dispatch(decrement())
+    }
     return (
         <div>
             <Head>
@@ -19,8 +21,8 @@ const About = () => {
             </Head>
             <Nav/>
             <p>{counter}</p>
-            <button onClick={() => dispatch(increment())}>+1</button>
-            <button onClick={() => dispatch(decrement())}>-1</button>
+            <button onClick={countIncrement}>+1</button>
+            <button onClick={countDecrement}>-1</button>
         </div>
     )
 }
