@@ -1,13 +1,13 @@
 import React from 'react'
 import Head from 'next/head'
-import Nav from '../components/nav'
+import Nav from './Nav'
 import { css } from 'emotion'
 import { useSelector, useDispatch } from "react-redux"
 
 const Top = () => {
-    const count = useSelector(state => state.count)
+    const name = useSelector(state => state.name)
     const changeName = () => {
-        console.log(count)
+        console.log(name)
     }
     changeName()
 
@@ -21,7 +21,7 @@ const Top = () => {
             <Nav/>
 
             <div className={hero}>
-                <h1 className='title'>Welcome to !</h1>
+                <h1 className='title'>Welcome to {name}!</h1>
                 <p className='description'>
                     To get started, edit <code>pages/index.js</code> and save to reload.
                 </p>

@@ -8,6 +8,5 @@ const reducer = combineReducers({
 })
 
 export const setupStore = () => {
-  const store = configureStore({reducer})
-  return store
+    return configureStore({reducer})
 }

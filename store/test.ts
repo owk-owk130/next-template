@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialState = {
-    name: ''
-}
-
 const slice = createSlice({
     name: 'testUser',
     initialState: 'nextjs',
@@ -14,7 +10,6 @@ const slice = createSlice({
         clearName: (state, action) => {
             return Object.assign({}, state, { name: "" })
         }
-
     }
 })
 
