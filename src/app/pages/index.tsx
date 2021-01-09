@@ -1,25 +1,16 @@
 import styles from "../styles/Home.module.scss";
 import DefaultLayout from "../layout/defaultLayout";
-import { sampleState } from "../atoms/sample";
-import { useRecoilState } from "recoil";
+import Counter from "../components/Counter";
 
 const Home = () => {
-    const [sample, setSample] = useRecoilState(sampleState);
-    const handleCountButton = () => {
-        setSample({ counter: sample.counter + 1 });
-    };
     return (
         <DefaultLayout>
             <div className={styles.container}>
                 <main className={styles.main}>
-                    <p>{sample.counter}</p>
-                    <button type="button" onClick={handleCountButton}>
-                        click
-                    </button>
+                    <Counter />
                     <h1 className={styles.title}>
                         Welcome to <a href="https://nextjs.org">Next.js!</a>
                     </h1>
-
                     <p className={styles.description}>
                         Get started by editing{" "}
                         <code className={styles.code}>pages/index.js</code>
