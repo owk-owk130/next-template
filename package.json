@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev ./src/app/",
     "build": "next build ./src/app/",
-    "start": "next start ./src/app/"
+    "start": "next start ./src/app/",
+    "lint": "eslint --ext .ts,.js,.tsx,.jsx src/**/*"
   },
   "dependencies": {
     "@types/react": "^17.0.0",
@@ -17,6 +18,14 @@
   },
   "devDependencies": {
     "@types/node": "^14.14.20",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1",
     "sass": "^1.32.2"
   }
 }
