@@ -1,4 +1,4 @@
-import { useSample } from "../atoms/sample";
+import { useSample } from "~/atoms/sample";
 
 const Counter = () => {
   const [sample, setSample] = useSample();
