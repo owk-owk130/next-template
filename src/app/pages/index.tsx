@@ -1,6 +1,7 @@
 import DefaultLayout from "../layout/defaultLayout";
 import Counter from "../components/Counter";
-import { css, jsx } from "@emotion/react";
+import { css } from "@emotion/react";
+import { mq, BreakPoints } from "../styles/mediaQuery";
 
 const Container = css`
   min-height: 100vh;
@@ -9,7 +10,11 @@ const Container = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${mq(BreakPoints.s)} {
+    background-color: antiquewhite;
+  }
 `;
+
 const Main = css`
   padding: 5rem 0;
   flex: 1;
@@ -36,6 +41,7 @@ const Footer = css`
     align-items: center;
   }
 `;
+
 const Logo = css`
   height: 1em;
 `;
