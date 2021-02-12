@@ -1,7 +1,7 @@
-import DefaultLayout from "../layout/defaultLayout";
-import Counter from "../components/Counter";
+import DefaultLayout from "~/layout/defaultLayout";
+import Counter from "~/components/Counter";
 import { css } from "@emotion/react";
-import { mq, BreakPoints } from "../styles/mediaQuery";
+import { mq, BreakPoints } from "~/styles/mediaQuery";
 
 const Container = css`
   min-height: 100vh;

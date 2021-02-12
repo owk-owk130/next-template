@@ -1,15 +1,15 @@
 import React from "react";
 import Head from "next/head";
-import {Meta} from "../config/meta"
+import { Meta } from "~/config/meta";
 
-const DefaultLayout = ({children}) => {
+const DefaultLayout = ({ children }) => {
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" href="/favicon.ico" />
         <title>{Meta.title}</title>
-        <meta name="description" content={Meta.description}/>
+        <meta name="description" content={Meta.description} />
         <meta property="og:url" content={Meta.url} />
         <meta property="og:image" content={Meta.image} />
         <meta property="og:title" content={Meta.title} />
@@ -22,7 +22,7 @@ const DefaultLayout = ({children}) => {
       </Head>
       {children}
     </>
-  )
-}
+  );
+};
 
-export default DefaultLayout
+export default DefaultLayout;
