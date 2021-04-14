@@ -6,7 +6,7 @@
     "dev": "next dev ./src/app/",
     "build": "next build ./src/app/",
     "start": "next start ./src/app/",
-    "lint": "eslint --ext .ts,.js,.tsx,.jsx src/**/*"
+    "lint": "cd ./src/app/ && eslint \"./**/*.?(ts|tsx|js)\" --config .eslintrc.js"
   },
   "dependencies": {
     "@emotion/babel-plugin": "^11.2.0",
