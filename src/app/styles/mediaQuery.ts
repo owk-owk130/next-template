@@ -1,3 +1,5 @@
+export const SP_WIDTH = 768;
+
 export const BreakPoints = <const>{
   s: 480,
   m: 768,
