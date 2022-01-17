@@ -1,34 +1,37 @@
 import {
   atom,
-  useRecoilState,
+  useRecoilCallback,
   useRecoilValue,
-  useSetRecoilState,
+  useResetRecoilState,
 } from "recoil";
 
 type SampleState = {
-  counter: number;
+  count: number;
 };
 
 const initialState: SampleState = {
-  counter: 0,
+  count: 0,
 };
 
-export const sampleState = atom({
+export const sampleStateAtom = atom<SampleState>({
   key: "counter",
   default: initialState,
 });
 
-/**
- * Sample用 useRecoilState のラッパーフック。
- */
-export const useSample = () => useRecoilState(sampleState);
+const useSet = () =>
+  useRecoilCallback(({ set }) => (count: number) => {
+    set(sampleStateAtom, { count: count });
+  });
 
-/**
- * Sample用 useRecoilValue のラッパーフック。
- */
-export const useSampleValue = () => useRecoilValue(sampleState);
+const useReset = () => useResetRecoilState(sampleStateAtom);
 
-/**
- * Sample用 useSetRecoilState のラッパーフック。
- */
-export const useSetSample = () => useSetRecoilState(sampleState);
+const useValue = () => useRecoilValue(sampleStateAtom);
+
+export const counterActions = {
+  useSet,
+  useReset,
+};
+
+export const counterGetters = {
+  useValue,
+};

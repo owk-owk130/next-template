@@ -1,13 +1,13 @@
-import { useSample } from "~/store/sample";
+import { useCounter } from "~/hooks/useCounter";
 
 const Counter = () => {
-  const [sample, setSample] = useSample();
+  const { value, UpdateCount } = useCounter();
   const handleCountButton = () => {
-    setSample({ counter: sample.counter + 1 });
+    UpdateCount();
   };
   return (
     <>
-      <p>{sample.counter}</p>
+      <p>{value.count}</p>
       <button type="button" onClick={handleCountButton}>
         click
       </button>
