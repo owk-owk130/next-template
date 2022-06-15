@@ -2,6 +2,7 @@ import { Title } from "~/features/Home/components/Title";
 import { Footer } from "~/components/common/Footer";
 import { css } from "@emotion/react";
 import { BreakPoints, mq } from "~/styles/mediaQuery";
+import { Counter } from "~/features/Home/components/Counter";
 
 export const HomePage = () => {
   return (
@@ -9,6 +10,7 @@ export const HomePage = () => {
       <div css={ContainerStyle}>
         <main css={MainStyle}>
           <Title text={"Hello World"} />
+          <Counter />
           <Footer />
         </main>
       </div>
