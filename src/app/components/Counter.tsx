@@ -1,13 +1,13 @@
 import { useCounter } from "~/hooks/useCounter";
 
 const Counter = () => {
-  const { value, UpdateCount } = useCounter();
+  const { count, UpdateCount } = useCounter();
   const handleCountButton = () => {
     UpdateCount();
   };
   return (
     <>
-      <p>{value.count}</p>
+      <p>{count}</p>
       <button type="button" onClick={handleCountButton}>
         click
       </button>

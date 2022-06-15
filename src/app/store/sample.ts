@@ -1,37 +1,16 @@
-import {
-  atom,
-  useRecoilCallback,
-  useRecoilValue,
-  useResetRecoilState,
-} from "recoil";
+import { atom, useAtomValue } from "jotai";
+import { useAtomCallback } from "jotai/utils";
+import { useCallback } from "react";
 
-type SampleState = {
-  count: number;
-};
-
-const initialState: SampleState = {
-  count: 0,
-};
-
-export const sampleStateAtom = atom<SampleState>({
-  key: "counter",
-  default: initialState,
-});
+const sampleAtom = atom<number>(0);
+const useValue = () => useAtomValue(sampleAtom);
 
 const useSet = () =>
-  useRecoilCallback(({ set }) => (count: number) => {
-    set(sampleStateAtom, { count: count });
-  });
+  useAtomCallback(
+    useCallback((_get, set, count: number) => {
+      set(sampleAtom, count);
+    }, [])
+  );
 
-const useReset = () => useResetRecoilState(sampleStateAtom);
-
-const useValue = () => useRecoilValue(sampleStateAtom);
-
-export const counterActions = {
-  useSet,
-  useReset,
-};
-
-export const counterGetters = {
-  useValue,
-};
+export const counterGetters = { useValue };
+export const counterActions = { useSet };
