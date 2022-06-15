@@ -6,8 +6,8 @@ export const useCounter = () => {
   const update = counterActions.useSet();
 
   const UpdateCount = useCallback(() => {
-    update(value.count + 1);
-  }, [value]);
+    update(value + 1);
+  }, [update, value]);
 
   return { value, UpdateCount };
 };
