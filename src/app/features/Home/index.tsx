@@ -10,13 +10,19 @@ export const HomePage = () => {
       <div css={ContainerStyle}>
         <main css={MainStyle}>
           <Title text={"Hello World"} />
-          <Counter />
+          <section css={CountContainerStyle}>
+            <Counter />
+          </section>
           <Footer />
         </main>
       </div>
     </>
   );
 };
+
+const CountContainerStyle = css`
+  margin: 20px 0;
+`;
 
 const ContainerStyle = css`
   min-height: 100vh;
@@ -31,6 +37,7 @@ const ContainerStyle = css`
 `;
 
 const MainStyle = css`
+  width: 100%;
   padding: 5rem 0;
   flex: 1;
   display: flex;
